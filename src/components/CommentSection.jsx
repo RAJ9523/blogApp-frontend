@@ -23,7 +23,7 @@ export default function CommentSection({ postId }) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-           credentials: 'include'
+          
         },
         body: JSON.stringify({
           content: comment,
@@ -65,7 +65,7 @@ export default function CommentSection({ postId }) {
       }
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/comment/likeComment/${commentId}`, {
         method: 'PUT',
-         credentials: 'include'
+        
       });
       if (res.ok) {
         const data = await res.json();
