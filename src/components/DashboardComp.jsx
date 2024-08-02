@@ -49,8 +49,8 @@ export default function DashboardComp() {
     };
     const fetchComments = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/comment/getcomments?limit=5`,
-                                credentials: 'include');
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/comment/getcomments?limit=5`
+                             );
         const data = await res.json();
         if (res.ok) {
           setComments(data.comments);
