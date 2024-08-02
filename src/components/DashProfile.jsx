@@ -7,7 +7,7 @@ import {
   ref,
   uploadBytesResumable,
 } from 'firebase/storage';
-import {app} from "../redux/firebase.js"
+import { app } from '../firebase';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import {
@@ -241,7 +241,7 @@ export default function DashProfile() {
         >
           {loading ? 'Loading...' : 'Update'}
         </Button>
-       
+        {currentUser.isAdmin && (
           <Link to={'/create-post'}>
             <Button
               type='button'
@@ -251,7 +251,7 @@ export default function DashProfile() {
               Create a post
             </Button>
           </Link>
-      
+        )}
       </form>
       <div className='text-red-500 flex justify-between mt-5'>
         <span onClick={() => setShowModal(true)} className='cursor-pointer'>
